@@ -1,0 +1,302 @@
+.logo{
+    width:auto;
+    height:80px;
+}
+.header{
+    background-color: black;
+    margin:-9px;
+}
+.n1{
+    text-decoration:none;
+    align-content: center;
+    color:white;
+    padding:27px;
+    text-align: center;
+    font-size:16px;
+}
+.th{
+    text-decoration: none;
+    size:40px;
+}
+
+.Main{
+    display:flex;
+
+}
+.image{
+    background-image: url('images/image.png');
+    height:600px;
+    margin:-9px;
+    background-position: center;
+    color:white;
+    align-content:center;
+    font-size:50px;
+    gradin
+}
+.Welcome{
+    text-decoration:none;
+    opacity:90%;
+    margin: 0px;
+}
+/* Base Resets for Footer Content */
+.site-footer {
+    background-color: #000000;
+    margin:-9px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 50px 20px 30px;
+    box-sizing: border-box;
+}
+
+.site-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.site-footer a:hover {
+    opacity: 0.7;
+}
+
+.site-footer h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Layout Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: -9px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Column Rules */
+.footer-col {
+    flex: 1;
+}
+
+.col-left {
+    text-align: left;
+    min-width: 400px;
+}
+
+.col-center {
+    text-align: center;
+    min-width: 250px;
+}
+
+.col-right {
+    text-align: right;
+    min-width: 350px;
+}
+
+/* Split Lists within Left and Right Columns */
+.split-lists {
+    display: flex;
+    gap: 30px;
+}
+
+.col-left .split-lists {
+    justify-content: flex-start;
+}
+
+.col-right .split-lists {
+    justify-content: flex-end;
+}
+
+/* List Styling */
+.link-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-list li {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Center Column Specifics */
+.col-center p {
+    margin: 14px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a i {
+    font-size: 20px;
+}
+
+/* Bottom Logo Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-bottom img {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .col-left, .col-center, .col-right {
+        text-align: center;
+        width: 100%;
+        min-width: unset;
+    }
+
+    .split-lists {
+        justify-content: center !important;
+    }
+    
+    .col-right .link-list {
+        text-align: left;
+    }
+}
+
+/* Layout Container */
+.glance-section {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 80px 30px;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.glance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.glance-title {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 0;
+    color: #2b3338; 
+}
+
+.glance-title .fw-bold {
+    font-weight: 700;
+    color: #1a2024;
+}
+
+.glance-desc {
+    max-width: 580px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+    margin: 0;
+    padding-top: 10px;
+}
+
+/* Subtle border under the header */
+.glance-divider {
+    height: 1px;
+    background-color: #eaeaea;
+    margin-bottom: 50px;
+}
+
+/* 3-Column Grid */
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    column-gap: 30px;
+}
+
+.glance-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Text Styling */
+.glance-number {
+    color: #a11f35; 
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.glance-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* --- Pure CSS Scroll Animations --- */
+
+@keyframes fadeUpOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animate {
+    /* Triggers the animation based on scroll position */
+    animation: fadeUpOnScroll linear both;
+    animation-timeline: view();
+    /* Starts animating when the element enters 5% of the viewport, finishes by 20% */
+    animation-range: entry 5% cover 30%; 
+}
+
+/* Optional standard CSS fallback delays if viewed at the very top of the page */
+.delay-1 { animation-delay: 0s; }
+.delay-2 { animation-delay: 0.65s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .glance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .glance-header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .glance-grid {
+        grid-template-columns: 1fr;
+    }
+    .glance-desc {
+        br {
+            display: none;
+        }
+    }
+}
