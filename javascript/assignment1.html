@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <style>
+        body{
+            background-color:black;
+                
+        }
+        #box{
+            background-color:rgba(39, 38, 38, 0.867);
+            color:white;
+            width:300px;
+            height:300px;
+            
+        }
+        td{
+            padding-bottom:10px;
+        }
+        button{
+            margin:40px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div id="box">
+        <h1>Online Shop</h1>
+        <table>
+            <tr>
+                <td>Rice :</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>Tea :</td>
+                <td>700</td>
+            </tr>
+            <tr>
+                <td>Coffee :</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>Sugar :</td>
+                <td>1000</td>
+            </tr>
+        </table>
+        <button onclick="triggerEvent()">Buy Now</button>
+    </div>
+    </center>
+    <script>
+        const shop={
+            rice:500,
+            tea:700,
+            coffee:800,
+            sugar:1000
+        }
+        function triggerEvent() {
+            let item=prompt("Enter your Product Name=");
+            let quantity=prompt("Enter your Quantity =");
+            document.write("Your Total Amount is=",shop[item]*quantity);
+        }  
+    </script>
+</body>
+</html>

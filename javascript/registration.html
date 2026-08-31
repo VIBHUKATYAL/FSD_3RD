@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background-color:black;
+        }
+        form{
+            margin-top:-60px;
+            color:white;
+            background-color:rgba(27, 26, 26, 0.883);
+            padding:50px ;
+        }
+        #Submit{
+            padding:8px;
+            
+            margin:10px 40px 0px 40px;
+        }
+        #Reset{
+            padding:8px;
+            margin:10px 40px 0px 40px;
+        }
+    </style>
+</head>
+<body>
+        <form>
+        <h1>Registration Page</h1>
+        <br><br>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <br><br>
+        <label for="Gender">Gender:</label>
+        <input type="Radio" id="male">
+        <label for="male">Male</label>
+        <input type="Radio" id="female">
+        <label for="female">Female</label>
+        <br><br>
+        <label for="contactNumber">Contact Number:</label>
+        <input type="number" id="contactNumber" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <label for="class">Standard:</label>
+        <input type="text" id="class" required>
+        <br><br>
+        <label for="section">Section:</label>
+        <select name="section" id="section">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+        <br><br>
+        <label for="address" vertical-align="top">Address:</label>
+        <textarea name="address" id="address" rows="2" columns="20" placeholder="Enter your full address........."></textarea>
+        <br><br>
+        <label for="district">District:</label>
+        <input type="text" id="district">
+        <br><br>
+        <label for="State">State:</label>
+        <input type="text" id="State">
+        <br><br>
+        <label for="Pincode">Pincode:</label>
+        <input type="number" id="Pincode">
+        <br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+        <br><br>
+        <button id="Submit" onclick="check()">Submit</button>
+        <button id="Reset">Reset</button>
+        </form>
+    <script>
+        let name=document.querySelector("#Name");
+        let contact=document.querySelector("#contactNumber");
+        let pincode=document.querySelector("#Pincode")
+
+        function check(){
+            if(name.value.length<2) alert("Length of name cannot be less than 2");
+            else if(contact.value.length!=10) alert("Length of phone Number cannot be greater than or less than 10");
+            else if(pincode.value.length!=6) alert("Invalid Pincode");
+            else {
+                alert("form submitted successfully");
+                event.preventDefault();
+                window.location.href = "login.html"; 
+            } 
+        }
+    </script>
+</body>
+</html>
