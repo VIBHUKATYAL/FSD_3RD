@@ -9,8 +9,12 @@
     <script>
         const num=[1,2,3,4,5,6,7,8,9];
         const red=num.reduce((accum,i)=>(accum+i));
+        const even=num.filter((i)=>(i%2 ==0));
+        const square=num.map((i)=>(i*i));
+        const red1=square.reduce((acc,i)=>(acc+i));
         console.log("Array:",num);
         console.log("Sum:",red);
+        console.log("Sum of squares of Even Number:",red1);
     </script>
 </body>
 </html>
