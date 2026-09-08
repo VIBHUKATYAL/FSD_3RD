@@ -17,15 +17,6 @@
 </head>
 <body>
     <table>
-        <thead>
-            <tr>
-                <th>Serial no.</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>Category</th>
-            </tr>
-        </thead>
         <tbody id="data">
 
         </tbody>
@@ -41,6 +32,15 @@
                 let row="";
                 data.products.map((i,index)=>{
                     row+=`
+                    <thead>
+                        <tr>
+                            <th>Serial no.</th>
+                            <th>Title</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
                     <tr>
                         <td>${index+1}</td>
                         <td>${i.title}</td>
