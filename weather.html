@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        table{
+            width:80%;
+            margin:auto;
+            padding:10px;
+            font-size:25px;
+            color:blue;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody id="data">
+            <thead>
+                        <tr>
+                            <th>Min-Temp</th>
+                            <th>Max-Temp</th>
+                            <th>Pressure</th>
+                            <th>Humidity</th>
+                            <th>Feels-like</th>
+                        </tr>
+                    </thead>
+        </tbody>
+    </table>
+    <script>
+        const ele=document.getElementById("data");
+        const URL="https://api.openweathermap.org/data/2.5/weather?q=Ghaziabad&appid=bd5e378503939ddaee76f12ad7a97608&units=metric";
+        async function weather(){
+            try{
+                const res=await fetch(URL);
+                const data=await res.json();
+                let row="";
+                    row+=`
+                    <tr>
+                        <td>${data.main.temp_min}</td>
+                        <td>${data.main.temp_max}</td>
+                        <td>$
+                    </tr>
+                    `;
+                    ele.innerHTML=row;
+            }
+            catch(err){
+                console.log("ERROR",err);
+                ele.innerHTML=`<tr>Network Error</tr>`; 
+            }
+        }
+        weather();
+    </script>
+</body>
+</html>
