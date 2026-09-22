@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Room {
+  id         String   @id @default(cuid())
+  roomNumber String   @unique // e.g. "KC G01"
+  floor      Int      // e.g. 0, 1, 2
+  floorName  String   // e.g. "Ground Floor"
+  type       String   @default("Lecture") // Lecture, Lab, Seminar Hall
+  capacity   Int      @default(60)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lectures   Lecture[]
+}
+
+model Lecturer {
+  id         String   @id @default(cuid())
+  name       String
+  department String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lectures   Lecture[]
+}
+
+model Class {
+  id         String   @id @default(cuid())
+  name       String
+  year       String
+  section    String?
+  department String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lectures   Lecture[]
+}
+
+model Subject {
+  id         String   @id @default(cuid())
+  name       String
+  code       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lectures   Lecture[]
+}
+
+model Lecture {
+  id          String   @id @default(cuid())
+  roomId      String
+  lecturerId  String
+  classId     String
+  subjectId   String
+  date        DateTime // Store date without time (or midnight)
+  startTime   String   // e.g., "09:00"
+  endTime     String   // e.g., "10:00"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  room        Room     @relation(fields: [roomId], references: [id])
+  lecturer    Lecturer @relation(fields: [lecturerId], references: [id])
+  class       Class    @relation(fields: [classId], references: [id])
+  subject     Subject  @relation(fields: [subjectId], references: [id])
+}
